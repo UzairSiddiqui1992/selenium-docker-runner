@@ -8,9 +8,9 @@ pipeline{
 
     stages{
 
-      stage('Init Emulator') {
+     stage('Init Emulator') {
     steps {
-        sh 'docker run --rm --privileged multiarch/qemu-user-static --reset -p yes'
+        sh 'docker run --platform linux/arm64 --rm --privileged multiarch/qemu-user-static --reset -p yes'
     }
 }
 
