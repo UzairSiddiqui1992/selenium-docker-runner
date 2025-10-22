@@ -1,5 +1,6 @@
 services:
   vendor-portal:
+    platform: linux/amd64
     image: uzairsiddiqui38/selenium
     environment:
       - BROWSER
@@ -10,6 +11,7 @@ services:
       - ./output/vendor-portal:/home/selenium-docker/test-output
 
   flight-reservation:
+    platform: linux/amd64
     image: uzairsiddiqui38/selenium
     environment:
       - BROWSER
