@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Start Selenium Grid') {
       steps {
-        bat "docker-compose -f grid.yaml up --scale ${params.BROWSER}=2 -d"
+        bat "docker-compose -f grid.yaml up --scale ${params.BROWSER}=1 -d"
       }
     }
     stage('Run Test Suite') {
