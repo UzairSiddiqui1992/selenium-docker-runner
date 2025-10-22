@@ -8,6 +8,12 @@ pipeline{
 
     stages{
 
+      stage('Init Emulator') {
+    steps {
+        sh 'docker run --rm --privileged multiarch/qemu-user-static --reset -p yes'
+    }
+}
+
         stage('Start Grid'){
             steps{
                 sh "docker-compose -f grid.yaml up --scale ${params.BROWSER}=1 -d"
